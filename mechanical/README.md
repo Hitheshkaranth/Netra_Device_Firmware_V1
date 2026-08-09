@@ -18,6 +18,12 @@ An internet connection is required when opening the viewer because it loads Thre
 
 ![NETRA belt system and printable enclosure assembly](../docs/images/netra-mechanical-3d-viewer.png)
 
+## Printer and slicer used
+
+The photographed NETRA enclosure print job was prepared in **Bambu Studio** for a **Bambu Lab P2S 3D printer**. The slicer preview used a 0.20 mm layer profile with automatic tree supports; the pictured plate estimated approximately 55.7 g of filament and 2 hours 10 minutes total print time. Treat these values as a record of this prototype build—re-slice the STL files for your own printer, nozzle, filament, and calibration.
+
+![NETRA enclosure parts sliced for the Bambu Lab P2S](../docs/images/netra-bambu-p2s-slicer.jpg)
+
 ## Included parts
 
 | File | Intended part |

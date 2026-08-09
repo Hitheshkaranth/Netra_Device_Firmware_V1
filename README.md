@@ -57,6 +57,12 @@ This is relative inertial movement tracking rather than GPS-style absolute posit
 | MPU6050 `SDA` | `SDA` | 4 | I²C data | Internal address auto-detected |
 | MPU6050 `SCL` | `SCL` | 5 | I²C clock | Bus runs at 100 kHz |
 
+### Prototype connection
+
+The breadboard prototype below shows the Glyph controller connected to the HC-SR04 ultrasonic sensor and MPU6050 IMU. Use the pin table above as the source of truth; jumper-wire colors may differ between builds.
+
+![NETRA Glyph, HC-SR04, and MPU6050 breadboard connection](docs/images/netra-breadboard-wiring.jpg)
+
 > [!CAUTION]
 > The HC-SR04 echo output is approximately 5 V. Never connect it directly to an ESP32-C6 input. Use, for example, 1 kΩ from `ECHO` to GPIO 15 and 2 kΩ from GPIO 15 to GND to reduce the signal to approximately 3.3 V.
 
@@ -72,13 +78,23 @@ HC-SR04 ECHO ── 1 kΩ ──┬── GPIO 15
 
 ### Arduino IDE
 
-1. Install [Arduino IDE 2](https://www.arduino.cc/en/software).
-2. In Boards Manager, install **esp32 by Espressif Systems** version 3.1.0 or newer.
-3. Open `Netra_Device_Firmware_V1.ino`.
-4. Select **PCBCUPID GLYPH C6** or **ESP32C6 Dev Module**.
-5. Enable **Tools → USB CDC On Boot** and select the device's COM port.
-6. Click **Verify**, then **Upload**.
-7. Open Serial Monitor at **115200 baud** after upload.
+Follow the official **[PCBCupid Arduino IDE setup guide](https://learn.pcbcupid.com/documentation/welcome/prerequisites/arduino-ide-setup)** when preparing a Glyph board. The required setup is summarized here:
+
+1. Install the latest [Arduino IDE](https://www.arduino.cc/en/software), preferably version **2.3 or newer**.
+2. Open **File → Preferences** and add this URL under **Additional Boards Manager URLs**:
+
+   ```text
+   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+   ```
+
+3. Open **Boards Manager**, search for `ESP32`, and install **esp32 by Espressif Systems**. Use the newest available release or at least version **3.1.0**.
+4. Connect the Glyph C6 with a data/sync-capable USB cable.
+5. Select **Tools → Board → ESP32 Arduino → GLYPHC6**. If that entry is unavailable, select **ESP32C6 Dev Module**.
+6. Open `Netra_Device_Firmware_V1.ino`, enable **Tools → USB CDC On Boot**, and select the board's COM port under **Tools → Port**.
+7. Click **Verify** and confirm compilation finishes successfully, then click **Upload**.
+8. After upload, open Serial Monitor at **115200 baud**.
+
+If the COM port is missing, hold **BOOT**, press and release **RESET** while continuing to hold BOOT, then release BOOT after the board enters bootloader mode. Re-select the COM port and upload again.
 
 ### Arduino CLI
 
