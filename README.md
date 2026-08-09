@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/netra-banner-short.png" alt="NETRA" width="100%">
+  <img src="docs/images/netra-banner.png" alt="NETRA" width="70%">
 </p>
 
 <div align="center">
