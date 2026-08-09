@@ -91,6 +91,24 @@ arduino-cli compile --fqbn esp32:esp32:esp32c6 .
 arduino-cli upload -p COM6 --fqbn esp32:esp32:esp32c6 .
 ```
 
+## Mechanical enclosure and 3D printing
+
+Printable NETRA V1 enclosure and wearable-pod models are maintained separately from the firmware source under [`mechanical/`](mechanical/). The directory contains six STL parts plus slicing, printing, dry-fit, and assembly instructions.
+
+The [interactive assembled-system viewer](mechanical/belt_system_viewer.html) renders the printable enclosure together with the belt, controller, sensors, controls, battery, and pod components. It includes ghost-shell, part-visibility, rotate, fit, and exploded-view controls.
+
+```text
+mechanical/stl/
+├── pod_1027_left.stl
+├── pod_1027_right.stl
+├── v2_button_cap.stl
+├── v3_knob.stl
+├── v7_base.stl
+└── v7_shell.stl
+```
+
+See the [mechanical and 3D-printing guide](mechanical/README.md) before printing or installing electronics.
+
 ## Serial protocol
 
 The device publishes one row every 250 ms:
@@ -132,6 +150,10 @@ Only one application can own the serial port at a time. Close Arduino Serial Mon
 Netra_Device_Firmware_V1/
 ├── Netra_Device_Firmware_V1.ino
 ├── docs/images/
+├── mechanical/
+│   ├── README.md
+│   ├── belt_system_viewer.html
+│   └── stl/*.stl
 ├── .gitignore
 └── README.md
 ```
