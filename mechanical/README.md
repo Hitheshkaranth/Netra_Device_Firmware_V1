@@ -16,6 +16,8 @@ The viewer provides:
 
 An internet connection is required when opening the viewer because it loads Three.js from cdnjs.
 
+![NETRA belt system and printable enclosure assembly](../docs/images/netra-mechanical-3d-viewer.png)
+
 ## Included parts
 
 | File | Intended part |

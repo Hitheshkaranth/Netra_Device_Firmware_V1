@@ -97,6 +97,8 @@ Printable NETRA V1 enclosure and wearable-pod models are maintained separately f
 
 The [interactive assembled-system viewer](mechanical/belt_system_viewer.html) renders the printable enclosure together with the belt, controller, sensors, controls, battery, and pod components. It includes ghost-shell, part-visibility, rotate, fit, and exploded-view controls.
 
+![NETRA belt system and 3D-printing assembly viewer](docs/images/netra-mechanical-3d-viewer.png)
+
 ```text
 mechanical/stl/
 ├── pod_1027_left.stl
