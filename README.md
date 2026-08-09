@@ -38,6 +38,12 @@ The V1 sensor node combines:
 
 The MPU6050 is read directly through `Wire`; no third-party sensor library is required.
 
+## Wearer movement tracking
+
+NETRA does more than measure nearby obstacles. The device is worn by the user, so its MPU6050 continuously captures the wearer's three-axis acceleration and three-axis rotation. The firmware streams this motion telemetry to the companion debugger, where it can be used to detect movement, estimate gait intensity, follow orientation changes, and animate the user's motion inside a closed or indoor tracking environment.
+
+This is relative inertial movement tracking rather than GPS-style absolute positioning. Long-term position estimation from an IMU alone will accumulate drift; the current system is designed for live movement state, posture/orientation response, and closed-environment visualization.
+
 ## Pin map
 
 | Sensor pin | Board pin | GPIO | Direction | Notes |
